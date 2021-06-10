@@ -26,7 +26,7 @@ impl TryFrom<u8> for GoalDataStatusKind {
 
 #[derive(Clone, Debug, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
-pub struct NewGoalProps {
+pub struct GoalNewProps {
   pub name: String,
   pub description: String,
   pub duration_estimate: i64,
@@ -36,7 +36,7 @@ pub struct NewGoalProps {
 
 #[derive(Clone, Debug, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
-pub struct NewScheduledGoalProps {
+pub struct ScheduledGoalNewProps {
   pub name: String,
   pub description: String,
   pub duration_estimate: i64,
@@ -48,7 +48,7 @@ pub struct NewScheduledGoalProps {
 
 #[derive(Clone, Debug, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
-pub struct NewGoalDataProps {
+pub struct GoalDataNewProps {
   pub goal_id: i64,
   pub name: String,
   pub description: String,
@@ -60,7 +60,7 @@ pub struct NewGoalDataProps {
 
 #[derive(Clone, Debug, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
-pub struct NewScheduledGoalDataProps {
+pub struct ScheduledGoalDataNewProps {
   pub goal_id: i64,
   pub name: String,
   pub description: String,
@@ -74,7 +74,7 @@ pub struct NewScheduledGoalDataProps {
 
 #[derive(Clone, Debug, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
-pub struct NewTimeUtilityFunctionProps {
+pub struct TimeUtilityFunctionNewProps {
   pub start_times: Vec<i64>,
   pub utils: Vec<i64>,
   pub api_key: String,
@@ -82,7 +82,7 @@ pub struct NewTimeUtilityFunctionProps {
 
 #[derive(Clone, Debug, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
-pub struct NewPastEventProps {
+pub struct PastEventNewProps {
   pub name: String,
   pub description: String,
   pub start_time: i64,
@@ -92,7 +92,7 @@ pub struct NewPastEventProps {
 
 #[derive(Clone, Debug, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
-pub struct NewPastEventDataProps {
+pub struct PastEventDataNewProps {
   pub past_event_id: i64,
   pub name: String,
   pub description: String,
@@ -104,7 +104,7 @@ pub struct NewPastEventDataProps {
 
 #[derive(Clone, Debug, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
-pub struct ViewGoalProps {
+pub struct GoalViewProps {
   pub goal_id: Option<i64>,
   pub creation_time: Option<i64>,
   pub min_creation_time: Option<i64>,
@@ -117,7 +117,7 @@ pub struct ViewGoalProps {
 
 #[derive(Clone, Debug, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
-pub struct ViewGoalDataProps {
+pub struct GoalDataViewProps {
   pub goal_data_id: Option<i64>,
   pub creation_time: Option<i64>,
   pub min_creation_time: Option<i64>,
@@ -148,7 +148,7 @@ pub struct ViewGoalDataProps {
 
 #[derive(Clone, Debug, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
-pub struct ViewPastEventProps {
+pub struct PastEventViewProps {
   pub past_event_id: Option<i64>,
   pub creation_time: Option<i64>,
   pub min_creation_time: Option<i64>,
@@ -161,7 +161,7 @@ pub struct ViewPastEventProps {
 
 #[derive(Clone, Debug, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
-pub struct ViewPastEventDataProps {
+pub struct PastEventDataViewProps {
   pub past_event_data_id: Option<i64>,
   pub creation_time: Option<i64>,
   pub min_creation_time: Option<i64>,
@@ -187,7 +187,7 @@ pub struct ViewPastEventDataProps {
 
 #[derive(Clone, Debug, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
-pub struct ViewTimeUtilityFunctionProps {
+pub struct TimeUtilityFunctionViewProps {
   pub time_utility_function_id: Option<i64>,
   pub creation_time: Option<i64>,
   pub min_creation_time: Option<i64>,
@@ -200,7 +200,7 @@ pub struct ViewTimeUtilityFunctionProps {
 
 #[derive(Clone, Debug, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
-pub struct ViewTimeUtilityFunctionPointProps {
+pub struct TimeUtilityFunctionPointViewProps {
   pub time_utility_function_point_id: Option<i64>,
   pub creation_time: Option<i64>,
   pub min_creation_time: Option<i64>,
