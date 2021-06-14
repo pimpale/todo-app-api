@@ -12,7 +12,7 @@ pub struct GoalIntentNewProps {
 #[derive(Clone, Debug, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct GoalIntentDataNewProps {
-  pub goal_id: i64,
+  pub goal_intent_id: i64,
   pub name: String,
   pub active: bool,
 }
@@ -120,6 +120,7 @@ pub struct GoalViewProps {
   pub min_creation_time: Option<i64>,
   pub max_creation_time: Option<i64>,
   pub creator_user_id: Option<i64>,
+  pub goal_intent_id: Option<i64>,
   pub offset: Option<i64>,
   pub count: Option<i64>,
   pub api_key: String,
@@ -143,6 +144,8 @@ pub struct GoalDataViewProps {
   pub parent_goal_id: Option<i64>,
   pub status: Option<GoalDataStatusKind>,
   pub only_recent: bool,
+  pub goal_intent_id: Option<i64>,
+  pub scheduled: Option<bool>,
   pub offset: Option<i64>,
   pub count: Option<i64>,
   pub api_key: String,
