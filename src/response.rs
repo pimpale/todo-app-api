@@ -37,7 +37,7 @@ impl std::error::Error for TodoAppError {}
 pub struct GoalIntent {
   pub goal_id: i64,
   pub creation_time: i64,
-  pub creator: auth_service_api::response::User,
+  pub creator_user_id: i64,
 }
 
 #[derive(Clone, Debug, Serialize, Deserialize)]
@@ -45,7 +45,7 @@ pub struct GoalIntent {
 pub struct GoalIntentData {
     pub goal_intent_data_id: i64,
     pub creation_time: i64,
-    pub creator: auth_service_api::response::User,
+    pub creator_user_id: i64,
     pub name: String,
     pub active: bool
 }
@@ -55,7 +55,7 @@ pub struct GoalIntentData {
 pub struct Goal {
   pub goal_id: i64,
   pub creation_time: i64,
-  pub creator: auth_service_api::response::User,
+  pub creator_user_id: i64,
   pub intent: Option<GoalIntent>,
 }
 
@@ -64,7 +64,7 @@ pub struct Goal {
 pub struct TimeUtilityFunction {
   pub time_utility_function_id: i64,
   pub creation_time: i64,
-  pub creator: auth_service_api::response::User,
+  pub creator_user_id: i64,
 }
 
 #[derive(Clone, Debug, Serialize, Deserialize)]
@@ -72,7 +72,7 @@ pub struct TimeUtilityFunction {
 pub struct TimeUtilityFunctionPoint {
   pub time_utility_function_point_id: i64,
   pub creation_time: i64,
-  pub creator: auth_service_api::response::User,
+  pub creator_user_id: i64,
   pub time_utility_function: TimeUtilityFunction,
   pub start_time: i64,
   pub utils: i64,
@@ -84,7 +84,7 @@ pub struct TimeUtilityFunctionPoint {
 pub struct GoalData {
   pub goal_data_id: i64,
   pub creation_time: i64,
-  pub creator: auth_service_api::response::User,
+  pub creator_user_id: i64,
   pub goal: Goal,
   pub name: String,
   pub duration_estimate: i64,
@@ -98,7 +98,7 @@ pub struct GoalData {
 pub struct TaskEvent {
   pub task_event_id: i64,
   pub creation_time: i64,
-  pub creator: auth_service_api::response::User,
+  pub creator_user_id: i64,
   pub goal: Goal,
   pub start_time: i64,
   pub duration: i64,

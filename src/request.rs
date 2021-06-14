@@ -76,7 +76,7 @@ pub struct TaskEventNewProps {
   pub goal_id: i64,
   pub start_time: i64,
   pub duration: i64,
-  pub active: i64,
+  pub active: bool,
   pub api_key: String,
 }
 
