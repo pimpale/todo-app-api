@@ -185,24 +185,3 @@ pub struct TimeUtilityFunctionViewProps {
   pub count: Option<i64>,
   pub api_key: String,
 }
-
-#[derive(Clone, Debug, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct TimeUtilityFunctionPointViewProps {
-  pub time_utility_function_point_id: Option<i64>,
-  pub creation_time: Option<i64>,
-  pub min_creation_time: Option<i64>,
-  pub max_creation_time: Option<i64>,
-  pub creator_user_id: Option<i64>,
-  pub time_utility_function_id: Option<i64>,
-  pub start_time: Option<i64>,
-  pub min_start_time: Option<i64>,
-  pub max_start_time: Option<i64>,
-  pub utils: Option<i64>,
-  pub min_utils: Option<i64>,
-  pub max_utils: Option<i64>,
-  pub offset: Option<i64>,
-  pub count: Option<i64>,
-  pub api_key: String,
-}
-

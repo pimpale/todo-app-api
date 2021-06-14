@@ -14,11 +14,13 @@ pub enum TodoAppError {
   TimeUtilityFunctionNotValid,
   NegativeStartTime,
   NegativeDuration,
+  GoalFormsCycle,
   CannotAlterTask,
   NetworkError,
   DecodeError,
   InternalServerError,
   MethodNotAllowed,
+  Unauthorized,
   BadRequest,
   NotFound,
   Unknown,
@@ -66,18 +68,8 @@ pub struct TimeUtilityFunction {
   pub time_utility_function_id: i64,
   pub creation_time: i64,
   pub creator_user_id: i64,
-}
-
-#[derive(Clone, Debug, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct TimeUtilityFunctionPoint {
-  pub time_utility_function_point_id: i64,
-  pub creation_time: i64,
-  pub creator_user_id: i64,
-  pub time_utility_function: TimeUtilityFunction,
-  pub start_time: i64,
-  pub utils: i64,
-  pub active: bool,
+  pub start_time: Vec<i64>,
+  pub utils: Vec<i64>,
 }
 
 #[derive(Clone, Debug, Serialize, Deserialize)]
