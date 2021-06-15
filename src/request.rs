@@ -15,6 +15,7 @@ pub struct GoalIntentDataNewProps {
   pub goal_intent_id: i64,
   pub name: String,
   pub active: bool,
+  pub api_key: String,
 }
 
 #[derive(Clone, Debug, Serialize, Deserialize, AsRefStr)]
