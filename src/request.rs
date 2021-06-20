@@ -45,6 +45,7 @@ pub struct GoalIntentDataNewProps {
 #[serde(rename_all = "camelCase")]
 pub struct GoalNewProps {
   pub name: String,
+  pub tags: Vec<String>,
   pub duration_estimate: i64,
   pub time_utility_function_id: i64,
   pub goal_intent_id: Option<i64>,
@@ -78,7 +79,7 @@ pub struct TimeUtilityFunctionNewProps {
 #[derive(Clone, Debug, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct ExternalEventNewProps {
-  pub name: i64,
+  pub name: String,
   pub start_time: i64,
   pub end_time: i64,
   pub active: bool,
