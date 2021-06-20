@@ -48,6 +48,7 @@ pub struct GoalNewProps {
   pub time_utility_function_id: i64,
   pub goal_intent_id: Option<i64>,
   pub parent_goal_id: Option<i64>,
+  pub time_span: Option<(i64, i64)>,
   pub api_key: String,
 }
 
@@ -59,6 +60,7 @@ pub struct GoalDataNewProps {
   pub duration_estimate: i64,
   pub time_utility_function_id: i64,
   pub parent_goal_id: Option<i64>,
+  pub time_span: Option<(i64, i64)>,
   pub status: GoalDataStatusKind,
   pub api_key: String,
 }
@@ -73,10 +75,21 @@ pub struct TimeUtilityFunctionNewProps {
 
 #[derive(Clone, Debug, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
-pub struct TaskEventNewProps {
-  pub goal_id: i64,
+pub struct ExternalEventNewProps {
+  pub name: i64,
   pub start_time: i64,
-  pub duration: i64,
+  pub end_time: i64,
+  pub active: bool,
+  pub api_key: String,
+}
+
+#[derive(Clone, Debug, Serialize, Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub struct ExternalEventDataNewProps {
+  pub external_event_id: i64,
+  pub name: i64,
+  pub start_time: i64,
+  pub end_time: i64,
   pub active: bool,
   pub api_key: String,
 }
@@ -85,7 +98,6 @@ pub struct TaskEventNewProps {
 #[serde(rename_all = "camelCase")]
 pub struct GoalIntentViewProps {
   pub goal_intent_id: Option<i64>,
-  pub creation_time: Option<i64>,
   pub min_creation_time: Option<i64>,
   pub max_creation_time: Option<i64>,
   pub creator_user_id: Option<i64>,
@@ -98,7 +110,6 @@ pub struct GoalIntentViewProps {
 #[serde(rename_all = "camelCase")]
 pub struct GoalIntentDataViewProps {
   pub goal_intent_data_id: Option<i64>,
-  pub creation_time: Option<i64>,
   pub min_creation_time: Option<i64>,
   pub max_creation_time: Option<i64>,
   pub creator_user_id: Option<i64>,
@@ -117,7 +128,6 @@ pub struct GoalIntentDataViewProps {
 #[serde(rename_all = "camelCase")]
 pub struct GoalViewProps {
   pub goal_id: Option<i64>,
-  pub creation_time: Option<i64>,
   pub min_creation_time: Option<i64>,
   pub max_creation_time: Option<i64>,
   pub creator_user_id: Option<i64>,
@@ -131,14 +141,12 @@ pub struct GoalViewProps {
 #[serde(rename_all = "camelCase")]
 pub struct GoalDataViewProps {
   pub goal_data_id: Option<i64>,
-  pub creation_time: Option<i64>,
   pub min_creation_time: Option<i64>,
   pub max_creation_time: Option<i64>,
   pub creator_user_id: Option<i64>,
   pub goal_id: Option<i64>,
   pub name: Option<String>,
   pub partial_name: Option<String>,
-  pub duration_estimate: Option<i64>,
   pub min_duration_estimate: Option<i64>,
   pub max_duration_estimate: Option<i64>,
   pub time_utility_function_id: Option<i64>,
@@ -147,28 +155,10 @@ pub struct GoalDataViewProps {
   pub only_recent: bool,
   pub goal_intent_id: Option<i64>,
   pub scheduled: Option<bool>,
-  pub offset: Option<i64>,
-  pub count: Option<i64>,
-  pub api_key: String,
-}
-
-#[derive(Clone, Debug, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct TaskEventViewProps {
-  pub task_event_id: Option<i64>,
-  pub creation_time: Option<i64>,
-  pub min_creation_time: Option<i64>,
-  pub max_creation_time: Option<i64>,
-  pub creator_user_id: Option<i64>,
-  pub goal_id: Option<i64>,
-  pub start_time: Option<i64>,
   pub min_start_time: Option<i64>,
   pub max_start_time: Option<i64>,
-  pub duration: Option<i64>,
-  pub min_duration: Option<i64>,
-  pub max_duration: Option<i64>,
-  pub active: Option<bool>,
-  pub only_recent: bool,
+  pub min_end_time: Option<i64>,
+  pub max_end_time: Option<i64>,
   pub offset: Option<i64>,
   pub count: Option<i64>,
   pub api_key: String,
@@ -178,7 +168,6 @@ pub struct TaskEventViewProps {
 #[serde(rename_all = "camelCase")]
 pub struct TimeUtilityFunctionViewProps {
   pub time_utility_function_id: Option<i64>,
-  pub creation_time: Option<i64>,
   pub min_creation_time: Option<i64>,
   pub max_creation_time: Option<i64>,
   pub creator_user_id: Option<i64>,
