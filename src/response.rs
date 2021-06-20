@@ -9,6 +9,7 @@ pub enum TodoAppError {
   NoCapability,
   GoalIntentNonexistent,
   GoalNonexistent,
+  ExternalEventNonexistent,
   TaskEventNonexistent,
   TimeUtilityFunctionNonexistent,
   TimeUtilityFunctionNotValid,
@@ -80,20 +81,31 @@ pub struct GoalData {
   pub creator_user_id: i64,
   pub goal: Goal,
   pub name: String,
+  pub tags: Vec<String>,
   pub duration_estimate: i64,
   pub time_utility_function: TimeUtilityFunction,
+  pub time_span: Option<(i64, i64)>,
   pub parent_goal: Option<Goal>,
   pub status: GoalDataStatusKind,
 }
 
 #[derive(Clone, Debug, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
-pub struct TaskEvent {
-  pub task_event_id: i64,
+pub struct ExternalEvent {
+  pub external_event_id: i64,
   pub creation_time: i64,
   pub creator_user_id: i64,
-  pub goal: Goal,
+}
+
+#[derive(Clone, Debug, Serialize, Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub struct ExternalEventData {
+  pub external_event_data_id: i64,
+  pub creation_time: i64,
+  pub creator_user_id: i64,
+  pub external_event: ExternalEvent,
+  pub name: String,
   pub start_time: i64,
-  pub duration: i64,
+  pub end_time: i64,
   pub active: bool,
 }
