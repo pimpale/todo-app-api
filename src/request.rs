@@ -90,7 +90,7 @@ pub struct ExternalEventNewProps {
 #[serde(rename_all = "camelCase")]
 pub struct ExternalEventDataNewProps {
   pub external_event_id: i64,
-  pub name: i64,
+  pub name: String,
   pub start_time: i64,
   pub end_time: i64,
   pub active: bool,
