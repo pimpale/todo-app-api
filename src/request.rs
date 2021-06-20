@@ -2,22 +2,6 @@ use serde::{Deserialize, Serialize};
 use std::convert::TryFrom;
 use strum::AsRefStr;
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct GoalIntentNewProps {
-  pub name: String,
-  pub api_key: String,
-}
-
-#[derive(Clone, Debug, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct GoalIntentDataNewProps {
-  pub goal_intent_id: i64,
-  pub name: String,
-  pub active: bool,
-  pub api_key: String,
-}
-
 #[derive(Clone, Debug, Serialize, Deserialize, AsRefStr)]
 #[serde(rename_all = "SCREAMING_SNAKE_CASE")]
 pub enum GoalDataStatusKind {
@@ -38,6 +22,22 @@ impl TryFrom<u8> for GoalDataStatusKind {
       x => Err(x),
     }
   }
+}
+
+#[derive(Clone, Debug, Serialize, Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub struct GoalIntentNewProps {
+  pub name: String,
+  pub api_key: String,
+}
+
+#[derive(Clone, Debug, Serialize, Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub struct GoalIntentDataNewProps {
+  pub goal_intent_id: i64,
+  pub name: String,
+  pub active: bool,
+  pub api_key: String,
 }
 
 #[derive(Clone, Debug, Serialize, Deserialize)]
