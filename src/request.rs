@@ -149,7 +149,7 @@ pub struct GoalDataViewProps {
   pub creator_user_id: Option<i64>,
   pub goal_id: Option<i64>,
   pub name: Option<String>,
-  pub tags: Option<String>,
+  pub tags: Option<Vec<String>>,
   pub partial_name: Option<String>,
   pub min_duration_estimate: Option<i64>,
   pub max_duration_estimate: Option<i64>,
