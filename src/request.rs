@@ -36,7 +36,6 @@ pub struct GoalIntentNewProps {
 pub struct GoalIntentDataNewProps {
   pub goal_intent_id: i64,
   pub name: String,
-  pub tags: Vec<String>,
   pub active: bool,
   pub api_key: String,
 }
