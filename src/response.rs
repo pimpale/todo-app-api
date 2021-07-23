@@ -17,13 +17,13 @@ pub enum TodoAppError {
   NegativeDuration,
   GoalFormsCycle,
   CannotAlterTask,
-  NetworkError,
   DecodeError,
   InternalServerError,
   MethodNotAllowed,
   Unauthorized,
   BadRequest,
   NotFound,
+  Network,
   Unknown,
 }
 
