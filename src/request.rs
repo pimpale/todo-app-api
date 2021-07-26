@@ -282,7 +282,6 @@ pub struct UserGeneratedCodeViewProps {
   pub max_creation_time: Option<i64>,
   pub creator_user_id: Option<Vec<i64>>,
   pub source_lang: Option<Vec<String>>,
-  pub only_recent: bool,
   pub api_key: String,
 }
 
@@ -344,6 +343,7 @@ pub struct NamedEntityDataViewProps {
   pub creator_user_id: Option<Vec<i64>>,
   pub named_entity_id: Option<Vec<i64>>,
   pub name: Option<Vec<String>>,
+  pub kind: Option<Vec<NamedEntityKind>>,
   pub active: Option<bool>,
   pub only_recent: bool,
   pub api_key: String,
@@ -366,33 +366,32 @@ pub struct NamedEntityPatternViewProps {
 #[derive(Clone, Debug, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct TimeUtilityFunctionViewProps {
-  pub time_utility_function_id: Option<i64>,
+  pub time_utility_function_id: Option<Vec<i64>>,
   pub min_creation_time: Option<i64>,
   pub max_creation_time: Option<i64>,
-  pub creator_user_id: Option<i64>,
+  pub creator_user_id: Option<Vec<i64>>,
   pub api_key: String,
 }
 
 #[derive(Clone, Debug, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct ExternalEventViewProps {
-  pub external_event_id: Option<i64>,
+  pub external_event_id: Option<Vec<i64>>,
   pub min_creation_time: Option<i64>,
   pub max_creation_time: Option<i64>,
-  pub creator_user_id: Option<i64>,
+  pub creator_user_id: Option<Vec<i64>>,
   pub api_key: String,
 }
 
 #[derive(Clone, Debug, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct ExternalEventDataViewProps {
-  pub external_event_data_id: Option<i64>,
+  pub external_event_data_id: Option<Vec<i64>>,
   pub min_creation_time: Option<i64>,
   pub max_creation_time: Option<i64>,
-  pub creator_user_id: Option<i64>,
-  pub external_event_id: Option<i64>,
-  pub name: Option<String>,
-  pub partial_name: Option<String>,
+  pub creator_user_id: Option<Vec<i64>>,
+  pub external_event_id: Option<Vec<i64>>,
+  pub name: Option<Vec<String>>,
   pub min_start_time: Option<i64>,
   pub max_start_time: Option<i64>,
   pub min_end_time: Option<i64>,
