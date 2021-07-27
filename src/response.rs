@@ -126,6 +126,7 @@ pub struct GoalTemplateData {
   pub goal_template_data_id: i64,
   pub creation_time: i64,
   pub creator_user_id: i64,
+  pub goal_template_data: GoalTemplateData,
   pub name: String,
   pub user_generated_code: UserGeneratedCode,
   pub active: bool,
