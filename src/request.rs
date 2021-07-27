@@ -130,7 +130,7 @@ pub struct TimeUtilityFunctionNewProps {
 }
 #[derive(Clone, Debug, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
-pub struct GoalTemplateNew {
+pub struct GoalTemplateNewProps {
   pub name: String,
   pub user_generated_code_id: i64,
   pub api_key: String,
@@ -138,7 +138,7 @@ pub struct GoalTemplateNew {
 
 #[derive(Clone, Debug, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
-pub struct GoalTemplateDataNew {
+pub struct GoalTemplateDataNewProps {
   pub name: String,
   pub user_generated_code_id: i64,
   pub active: bool,
@@ -147,7 +147,7 @@ pub struct GoalTemplateDataNew {
 
 #[derive(Clone, Debug, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
-pub struct GoalTemplatePatternNew {
+pub struct GoalTemplatePatternNewProps {
   pub goal_template_id: i64,
   pub pattern: String,
   pub active: bool,
@@ -156,7 +156,7 @@ pub struct GoalTemplatePatternNew {
 
 #[derive(Clone, Debug, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
-pub struct NamedEntityNew {
+pub struct NamedEntityNewProps {
   pub name: String,
   pub kind: NamedEntityKind,
   pub api_key: String,
@@ -164,7 +164,7 @@ pub struct NamedEntityNew {
 
 #[derive(Clone, Debug, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
-pub struct NamedEntityDataNew {
+pub struct NamedEntityDataNewProps {
   pub named_entity_id: i64,
   pub name: String,
   pub kind: NamedEntityKind,
@@ -174,7 +174,7 @@ pub struct NamedEntityDataNew {
 
 #[derive(Clone, Debug, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
-pub struct NamedEntityPatternNew {
+pub struct NamedEntityPatternNewProps {
   pub named_entity_id: i64,
   pub pattern: String,
   pub active: bool,
