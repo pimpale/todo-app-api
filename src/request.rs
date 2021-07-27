@@ -80,7 +80,6 @@ pub struct GoalIntentDataNewProps {
 #[serde(rename_all = "camelCase")]
 pub struct GoalNewProps {
   pub name: String,
-  pub tags: Vec<String>,
   pub duration_estimate: i64,
   pub time_utility_function_id: i64,
   pub goal_intent_id: Option<i64>,
@@ -94,7 +93,6 @@ pub struct GoalNewProps {
 pub struct GoalDataNewProps {
   pub goal_id: i64,
   pub name: String,
-  pub tags: Vec<String>,
   pub duration_estimate: i64,
   pub time_utility_function_id: i64,
   pub parent_goal_id: Option<i64>,
