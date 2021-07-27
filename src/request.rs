@@ -255,6 +255,7 @@ pub struct GoalDataViewProps {
   pub status: Option<Vec<GoalDataStatusKind>>,
   pub only_recent: bool,
   pub goal_intent_id: Option<Vec<i64>>,
+  pub scheduled: Option<bool>,
   pub api_key: String,
 }
 
