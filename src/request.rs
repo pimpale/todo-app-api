@@ -139,6 +139,7 @@ pub struct GoalTemplateNewProps {
 #[derive(Clone, Debug, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct GoalTemplateDataNewProps {
+  pub goal_template_id: i64,
   pub name: String,
   pub user_generated_code_id: i64,
   pub active: bool,
