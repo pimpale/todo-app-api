@@ -94,7 +94,6 @@ pub struct GoalDataNewProps {
   pub name: String,
   pub duration_estimate: Option<i64>,
   pub time_utility_function_id: i64,
-  pub parent_goal_id: Option<i64>,
   pub status: GoalDataStatusKind,
   pub api_key: String,
 }
@@ -129,6 +128,7 @@ pub struct TimeUtilityFunctionNewProps {
 #[serde(rename_all = "camelCase")]
 pub struct GoalTemplateNewProps {
   pub name: String,
+  pub duration_estimate: Option<i64>,
   pub user_generated_code_id: i64,
   pub api_key: String,
 }
@@ -138,6 +138,7 @@ pub struct GoalTemplateNewProps {
 pub struct GoalTemplateDataNewProps {
   pub goal_template_id: i64,
   pub name: String,
+  pub duration_estimate: Option<i64>,
   pub user_generated_code_id: i64,
   pub active: bool,
   pub api_key: String,
@@ -156,7 +157,7 @@ pub struct GoalTemplatePatternNewProps {
 #[serde(rename_all = "camelCase")]
 pub struct GoalDependencyNewProps{
   pub goal_id: i64,
-  pub dependent_goal_id: String,
+  pub dependent_goal_id: i64,
   pub active: bool,
   pub api_key: String,
 }

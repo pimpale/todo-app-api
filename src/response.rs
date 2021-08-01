@@ -155,6 +155,17 @@ pub struct GoalDependency {
   pub active: bool,
 }
 
+#[derive(Clone, Debug)]
+pub struct GoalEntityTag {
+  pub goal_entity_tag_id: i64,
+  pub creation_time: i64,
+  pub creator_user_id: i64,
+  pub named_entity: NamedEntity,
+  pub goal: Goal,
+  pub active: bool,
+}
+
+
 #[derive(Clone, Debug, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct NamedEntity {
