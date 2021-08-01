@@ -11,6 +11,7 @@ pub enum TodoAppError {
   GoalNonexistent,
   GoalEventNonexistent,
   GoalTemplateNonexistent,
+  GoalDependencyNonexistent,
   ExternalEventNonexistent,
   NamedEntityNonexistent,
   UserGeneratedCodeNonexistent,
@@ -18,7 +19,7 @@ pub enum TodoAppError {
   TimeUtilityFunctionNotValid,
   NegativeStartTime,
   NegativeDuration,
-  GoalFormsCycle,
+  GoalDependencyFormsCycle,
   DecodeError,
   InternalServerError,
   MethodNotAllowed,
@@ -140,6 +141,17 @@ pub struct GoalTemplatePattern {
   pub creator_user_id: i64,
   pub goal_template: GoalTemplate,
   pub pattern: String,
+  pub active: bool,
+}
+
+#[derive(Clone, Debug, Serialize, Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub struct GoalDependency {
+  pub goal_dependency_id: i64,
+  pub creation_time: i64,
+  pub creator_user_id: i64,
+  pub goal: Goal,
+  pub dependent_goal: Goal,
   pub active: bool,
 }
 

@@ -155,6 +155,15 @@ pub struct GoalTemplatePatternNewProps {
 
 #[derive(Clone, Debug, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
+pub struct GoalDependencyNewProps{
+  pub goal_id: i64,
+  pub dependent_goal_id: String,
+  pub active: bool,
+  pub api_key: String,
+}
+
+#[derive(Clone, Debug, Serialize, Deserialize)]
+#[serde(rename_all = "camelCase")]
 pub struct NamedEntityNewProps {
   pub name: String,
   pub kind: NamedEntityKind,
@@ -197,6 +206,15 @@ pub struct ExternalEventDataNewProps {
   pub name: String,
   pub start_time: i64,
   pub end_time: i64,
+  pub active: bool,
+  pub api_key: String,
+}
+
+#[derive(Clone, Debug, Serialize, Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub struct GoalEntityTagNewProps {
+  pub named_entity_id: i64,
+  pub goal_id: i64,
   pub active: bool,
   pub api_key: String,
 }
@@ -326,6 +344,20 @@ pub struct GoalTemplatePatternViewProps {
 
 #[derive(Clone, Debug, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
+pub struct GoalDependencyViewProps {
+  pub goal_dependency_id: Option<Vec<i64>>,
+  pub min_creation_time: Option<i64>,
+  pub max_creation_time: Option<i64>,
+  pub creator_user_id: Option<Vec<i64>>,
+  pub goal_id: Option<Vec<i64>>,
+  pub dependent_goal_id: Option<Vec<i64>>,
+  pub active: Option<bool>,
+  pub only_recent: bool,
+  pub api_key: String,
+}
+
+#[derive(Clone, Debug, Serialize, Deserialize)]
+#[serde(rename_all = "camelCase")]
 pub struct NamedEntityViewProps {
   pub named_entity_id: Option<Vec<i64>>,
   pub min_creation_time: Option<i64>,
@@ -396,6 +428,20 @@ pub struct ExternalEventDataViewProps {
   pub max_start_time: Option<i64>,
   pub min_end_time: Option<i64>,
   pub max_end_time: Option<i64>,
+  pub active: Option<bool>,
+  pub only_recent: bool,
+  pub api_key: String,
+}
+
+#[derive(Clone, Debug, Serialize, Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub struct GoalEntityTagViewProps {
+  pub goal_entity_tag_id: Option<Vec<i64>>,
+  pub min_creation_time: Option<i64>,
+  pub max_creation_time: Option<i64>,
+  pub creator_user_id: Option<Vec<i64>>,
+  pub named_entity_id: Option<Vec<i64>>,
+  pub goal_id: Option<Vec<i64>>,
   pub active: Option<bool>,
   pub only_recent: bool,
   pub api_key: String,
