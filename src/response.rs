@@ -84,9 +84,8 @@ pub struct GoalData {
   pub creator_user_id: i64,
   pub goal: Goal,
   pub name: String,
-  pub duration_estimate: i64,
+  pub duration_estimate: Option<i64>,
   pub time_utility_function: TimeUtilityFunction,
-  pub parent_goal: Option<Goal>,
   pub status: request::GoalDataStatusKind,
 }
 
@@ -130,6 +129,7 @@ pub struct GoalTemplateData {
   pub goal_template: GoalTemplate,
   pub name: String,
   pub user_generated_code: UserGeneratedCode,
+  pub duration_estimate: Option<i64>,
   pub active: bool,
 }
 

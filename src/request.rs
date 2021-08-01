@@ -80,10 +80,9 @@ pub struct GoalIntentDataNewProps {
 #[serde(rename_all = "camelCase")]
 pub struct GoalNewProps {
   pub name: String,
-  pub duration_estimate: i64,
+  pub duration_estimate: Option<i64>,
   pub time_utility_function_id: i64,
   pub goal_intent_id: Option<i64>,
-  pub parent_goal_id: Option<i64>,
   pub time_span: Option<(i64, i64)>,
   pub api_key: String,
 }
@@ -93,7 +92,7 @@ pub struct GoalNewProps {
 pub struct GoalDataNewProps {
   pub goal_id: i64,
   pub name: String,
-  pub duration_estimate: i64,
+  pub duration_estimate: Option<i64>,
   pub time_utility_function_id: i64,
   pub parent_goal_id: Option<i64>,
   pub status: GoalDataStatusKind,
@@ -266,8 +265,8 @@ pub struct GoalDataViewProps {
   pub name: Option<Vec<String>>,
   pub min_duration_estimate: Option<i64>,
   pub max_duration_estimate: Option<i64>,
+  pub concrete: Option<bool>,
   pub time_utility_function_id: Option<Vec<i64>>,
-  pub parent_goal_id: Option<Vec<i64>>,
   pub status: Option<Vec<GoalDataStatusKind>>,
   pub only_recent: bool,
   pub goal_intent_id: Option<Vec<i64>>,
@@ -323,6 +322,9 @@ pub struct GoalTemplateDataViewProps {
   pub goal_template_id: Option<Vec<i64>>,
   pub name: Option<Vec<String>>,
   pub user_generated_code_id: Option<Vec<i64>>,
+  pub min_duration_estimate: Option<i64>,
+  pub max_duration_estimate: Option<i64>,
+  pub concrete: Option<bool>,
   pub active: Option<bool>,
   pub only_recent: bool,
   pub api_key: String,
