@@ -128,6 +128,7 @@ pub struct TimeUtilityFunctionNewProps {
 #[serde(rename_all = "camelCase")]
 pub struct GoalTemplateNewProps {
   pub name: String,
+  pub utility: i64,
   pub duration_estimate: Option<i64>,
   pub user_generated_code_id: i64,
   pub api_key: String,
@@ -138,6 +139,7 @@ pub struct GoalTemplateNewProps {
 pub struct GoalTemplateDataNewProps {
   pub goal_template_id: i64,
   pub name: String,
+  pub utility: i64,
   pub duration_estimate: Option<i64>,
   pub user_generated_code_id: i64,
   pub active: bool,
@@ -322,6 +324,8 @@ pub struct GoalTemplateDataViewProps {
   pub creator_user_id: Option<Vec<i64>>,
   pub goal_template_id: Option<Vec<i64>>,
   pub name: Option<Vec<String>>,
+  pub min_utility: Option<i64>,
+  pub max_utility: Option<i64>,
   pub user_generated_code_id: Option<Vec<i64>>,
   pub min_duration_estimate: Option<i64>,
   pub max_duration_estimate: Option<i64>,
