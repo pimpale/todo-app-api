@@ -218,3 +218,12 @@ pub struct ExternalEventData {
   pub end_time: i64,
   pub active: bool,
 }
+
+#[derive(Clone, Debug, Serialize, Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub struct Info {
+  pub service: String,
+  pub version_major: i64,
+  pub version_minor: i64,
+  pub version_rev: i64,
+}
