@@ -7,7 +7,6 @@ use super::request;
 #[serde(rename_all = "SCREAMING_SNAKE_CASE")]
 pub enum TodoAppError {
   NoCapability,
-  GoalIntentNonexistent,
   GoalNonexistent,
   GoalEventNonexistent,
   GoalTemplateNonexistent,
@@ -40,30 +39,10 @@ impl std::error::Error for TodoAppError {}
 
 #[derive(Clone, Debug, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
-pub struct GoalIntent {
-  pub goal_intent_id: i64,
-  pub creation_time: i64,
-  pub creator_user_id: i64,
-}
-
-#[derive(Clone, Debug, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct GoalIntentData {
-  pub goal_intent_data_id: i64,
-  pub creation_time: i64,
-  pub creator_user_id: i64,
-  pub goal_intent: GoalIntent,
-  pub name: String,
-  pub active: bool,
-}
-
-#[derive(Clone, Debug, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
 pub struct Goal {
   pub goal_id: i64,
   pub creation_time: i64,
   pub creator_user_id: i64,
-  pub intent: Option<GoalIntent>,
 }
 
 #[derive(Clone, Debug, Serialize, Deserialize)]

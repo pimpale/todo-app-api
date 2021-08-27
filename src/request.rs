@@ -62,27 +62,10 @@ impl TryFrom<u8> for NamedEntityKind {
 
 #[derive(Clone, Debug, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
-pub struct GoalIntentNewProps {
-  pub name: String,
-  pub api_key: String,
-}
-
-#[derive(Clone, Debug, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct GoalIntentDataNewProps {
-  pub goal_intent_id: i64,
-  pub name: String,
-  pub active: bool,
-  pub api_key: String,
-}
-
-#[derive(Clone, Debug, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
 pub struct GoalNewProps {
   pub name: String,
   pub duration_estimate: Option<i64>,
   pub time_utility_function_id: i64,
-  pub goal_intent_id: Option<i64>,
   pub time_span: Option<(i64, i64)>,
   pub api_key: String,
 }
@@ -223,37 +206,11 @@ pub struct GoalEntityTagNewProps {
 
 #[derive(Clone, Debug, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
-pub struct GoalIntentViewProps {
-  pub goal_intent_id: Option<Vec<i64>>,
-  pub min_creation_time: Option<i64>,
-  pub max_creation_time: Option<i64>,
-  pub creator_user_id: Option<Vec<i64>>,
-  pub api_key: String,
-}
-
-#[derive(Clone, Debug, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct GoalIntentDataViewProps {
-  pub goal_intent_data_id: Option<Vec<i64>>,
-  pub min_creation_time: Option<i64>,
-  pub max_creation_time: Option<i64>,
-  pub creator_user_id: Option<Vec<i64>>,
-  pub goal_intent_id: Option<Vec<i64>>,
-  pub name: Option<Vec<String>>,
-  pub responded: Option<bool>,
-  pub active: Option<bool>,
-  pub only_recent: bool,
-  pub api_key: String,
-}
-
-#[derive(Clone, Debug, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
 pub struct GoalViewProps {
   pub goal_id: Option<Vec<i64>>,
   pub min_creation_time: Option<i64>,
   pub max_creation_time: Option<i64>,
   pub creator_user_id: Option<Vec<i64>>,
-  pub goal_intent_id: Option<Vec<i64>>,
   pub api_key: String,
 }
 
@@ -272,7 +229,6 @@ pub struct GoalDataViewProps {
   pub time_utility_function_id: Option<Vec<i64>>,
   pub status: Option<Vec<GoalDataStatusKind>>,
   pub only_recent: bool,
-  pub goal_intent_id: Option<Vec<i64>>,
   pub scheduled: Option<bool>,
   pub api_key: String,
 }
