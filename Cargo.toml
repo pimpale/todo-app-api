@@ -7,6 +7,6 @@ edition = "2018"
 
 [dependencies]
 serde = { version = "1.0", features = ["derive"] }
-strum = { version = "0.20", features = ["derive"] }
+strum = { version = "0.24", features = ["derive"] }
 
 auth-service-api = {version = "*", git = "https://github.com/innexgo/auth-service-api" }
