@@ -1,8 +1,8 @@
+use derive_more::Display;
 use serde::{Deserialize, Serialize};
 use std::convert::TryFrom;
-use strum::AsRefStr;
 
-#[derive(Clone, Debug, Serialize, Deserialize, AsRefStr)]
+#[derive(Clone, Debug, Serialize, Deserialize, Display)]
 #[serde(rename_all = "SCREAMING_SNAKE_CASE")]
 pub enum GoalDataStatusKind {
   Succeed,
@@ -24,7 +24,7 @@ impl TryFrom<u8> for GoalDataStatusKind {
   }
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize, AsRefStr)]
+#[derive(Clone, Debug, Serialize, Deserialize, Display)]
 #[serde(rename_all = "SCREAMING_SNAKE_CASE")]
 pub enum NamedEntityKind {
   Date,

@@ -1,9 +1,9 @@
+use derive_more::Display;
 use serde::{Deserialize, Serialize};
-use strum::AsRefStr;
 
 use super::request;
 
-#[derive(Clone, Debug, Serialize, Deserialize, AsRefStr)]
+#[derive(Clone, Debug, Serialize, Deserialize, Display)]
 #[serde(rename_all = "SCREAMING_SNAKE_CASE")]
 pub enum TodoAppError {
   NoCapability,
@@ -27,12 +27,6 @@ pub enum TodoAppError {
   NotFound,
   Network,
   Unknown,
-}
-
-impl std::fmt::Display for TodoAppError {
-  fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-    write!(f, "{}", self.as_ref())
-  }
 }
 
 impl std::error::Error for TodoAppError {}
@@ -205,4 +199,6 @@ pub struct Info {
   pub version_major: i64,
   pub version_minor: i64,
   pub version_rev: i64,
+  pub site_external_url: String,
+  pub auth_service_external_url: String,
 }
